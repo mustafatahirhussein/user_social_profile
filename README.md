@@ -19,27 +19,27 @@ This is a pure Dart Package
 ## How to install and use
 
 First, import the package
-``
+
+```
 import 'package:user_social_profile/user_social_profile.dart';
-``
+```
 
 Code Snippet
 
 ````
 UserSocialProfile(
-fullName: "Mustafa Tahir",
-icons: [
-SocialIcon(
-name: Platform.github,
-link: "your_github_url",
-iconSize: 50,
-),
-SocialIcon(
-name: Platform.linkedin,
-link: "your_linkedin_url",
-iconSize: 50,
-),
-],
-email: "abc@gmail.com",
-),
-```
+    fullName: "Mustafa Tahir",
+    icons: [
+        SocialIcon(
+        name: Platform.github,
+        link: "your_github_url",
+        iconSize: 50,
+      ),
+        SocialIcon(
+        name: Platform.linkedin,
+        link: "your_linkedin_url",
+        iconSize: 50,
+      ),
+    ],
+    email: "abc@gmail.com",
+ ),
