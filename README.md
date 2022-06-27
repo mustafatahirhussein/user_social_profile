@@ -11,32 +11,35 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+This package is useful for displaying the User or a Developer's Social Media information.
 
 ## Features
+This is a pure Dart Package
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## How to install and use
 
-## Getting started
+First, import the package
+``
+import 'package:user_social_profile/user_social_profile.dart';
+``
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Code Snippet
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
-![Screenshot](C:\Users\mustafa.tahir\Desktop\Screenshot_20220627-182839.jpg)
-!(C:\Users\mustafa.tahir\Desktop\Screenshot_20220627-182839.jpg)
-
-```dart
-const like = 'sample';
+````
+UserSocialProfile(
+fullName: "Mustafa Tahir",
+icons: [
+SocialIcon(
+name: Platform.github,
+link: "your_github_url",
+iconSize: 50,
+),
+SocialIcon(
+name: Platform.linkedin,
+link: "your_linkedin_url",
+iconSize: 50,
+),
+],
+email: "abc@gmail.com",
+),
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
