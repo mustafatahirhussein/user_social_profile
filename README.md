@@ -28,6 +28,7 @@ start using the package.
 TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder. 
 
+![Screenshot](Screenshot_20220627-182839.jpg)
 !(C:\Users\mustafa.tahir\Desktop\Screenshot_20220627-182839.jpg)
 
 ```dart
