@@ -24,9 +24,10 @@ First, import the package
 import 'package:user_social_profile/user_social_profile.dart';
 ```
 
+
 Code Snippet
 
-````
+```
 UserSocialProfile(
     fullName: "Mustafa Tahir",
     icons: [
@@ -43,3 +44,9 @@ UserSocialProfile(
     ],
     email: "abc@gmail.com",
  ),
+```
+
+Optional Parameters
+`*`
+Picture
+
