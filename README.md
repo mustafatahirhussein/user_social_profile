@@ -47,6 +47,13 @@ UserSocialProfile(
 ```
 
 Optional Parameters
-`*`
-Picture
+
+```
+- Picture
+- Email
+- Phone#
+
+/* You can make use of styling as well */
+emailStyle & phoneStyle respectively
+```
 
