@@ -51,9 +51,11 @@ Optional Parameters
 ```
 - Picture
 - Email
-- Phone#
+- Phone
 
-/* You can make use of styling as well */
-emailStyle & phoneStyle respectively
+You can make use of styling as well by applying,
+
+- emailStyle
+- phoneStyle
 ```
 
