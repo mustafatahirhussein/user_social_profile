@@ -2,7 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:user_social_profile/src/social_icon_const.dart';
-import 'package:user_social_profile/src/widgets/cache_image_network_custom.dart';
+import 'package:user_social_profile/src/widgets/user_profile_handler_custom.dart';
+import 'package:user_social_profile/src/widgets/platform_icon_custom_widget.dart';
 
 class UserSocialProfile extends StatelessWidget {
   ///Supported Icons
@@ -45,28 +46,10 @@ class UserSocialProfile extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
 
-            // CachedNetworkImage(
-            //   imageUrl: picture == null
-            //       ? "https://nowsheradc.peshawarhighcourt.gov.pk/assets/public/profile_n_pictures/1650867081Muhammad_Fiaz.png"
-            //       : picture!,
-            //   imageBuilder: (context, imageProvider) => CircleAvatar(
-            //     backgroundColor: Colors.black,
-            //     radius: 101,
-            //     child: CircleAvatar(
-            //       radius: 100,
-            //       backgroundImage: imageProvider,
-            //     ),
-            //   ),
-            //   placeholder: (context, url) => const CircularProgressIndicator(),
-            //   errorWidget: (context, url, error) => const Icon(Icons.error),
-            // ),
-
-            CacheImageNetworkCustom(
-              imageUrl: picture!,
-            ),
+            UserProfileHandlerCustom(imageUrl: picture!),
 
             const SizedBox(
-              height: 40,
+              height: 30,
             ),
           ],
         ),
@@ -78,7 +61,7 @@ class UserSocialProfile extends StatelessWidget {
         email == null
             ? Container()
             : Text(
-          "Email - ${email!}",
+          "Email: ${email!}",
           textAlign: TextAlign.center,
           softWrap: true,
           style: emailStyle ?? style.copyWith(fontSize: 18),
@@ -86,12 +69,15 @@ class UserSocialProfile extends StatelessWidget {
         phone == null
             ? Container()
             : Text(
-          "Phone - (${phone!})",
+          "Phone: ${phone!}",
           textAlign: TextAlign.center,
           softWrap: true,
           style: phoneStyle ?? style.copyWith(fontSize: 18),
         ),
 
+        SizedBox(
+          height: 20,
+        ),
         ///Horizontal Class for Social Icon
         Container(
           height: 120,
@@ -134,13 +120,8 @@ class SocialIcon extends StatelessWidget {
         width: iconSize ?? 50,
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
-          // image: DecorationImage(
-          //   image: AssetImage('assets/$name.png'),
-          // ),
         ),
-        child: CacheImageNetworkCustom(
-          imageUrl: link,
-        ),
+        child: PlatformIconCustomWidget(path: name),
       ),
       onTap: () => gotoUrl(link),
     );

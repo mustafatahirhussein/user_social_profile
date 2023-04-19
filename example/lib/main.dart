@@ -20,29 +20,31 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
         body:  Center(
-          child: Column(
-            children: [
-              UserSocialProfile(
-                fullName: "Mustafa Tahir",
-                icons: [
-                  SocialIcon(
-                    name: Platform.behance,
-                    link: "https://github.com/mustafatahirhussein",
-                    iconSize: 50,
-                  ),
-                  SocialIcon(
-                    name: Platform.medium,
-                    link: "https://github.com/mustafatahirhussein",
-                    iconSize: 50,
-                  ),
-                ],
-                email: "abc@gmail.com",
-                phone: "+921234567890",
-              ),
+          child: UserSocialProfile(
+            fullName: "Mustafa Tahir",
+            picture: 'https://avatars.githubusercontent.com/u/60258980?s=400&u=49d305bd19e5cf0eaf101986bfa075c3a7a3931c&v=4',
+            icons: [
+              icon(Platform.medium),
+              icon(Platform.github),
+              icon(Platform.youtube),
+              icon(Platform.linkedin),
+              icon(Platform.behance),
+              icon(Platform.stack),
+              icon(Platform.meta),
+              icon(Platform.twitter),
+              icon(Platform.instagram),
             ],
+            email: "abc@gmail.com",
+            phone: "+921234567890",
           ),
         ),
       ),
     );
   }
+
+  SocialIcon icon(String param) => SocialIcon(
+    name: param,
+    link: "https://github.com/mustafatahirhussein",
+    iconSize: 45,
+  );
 }
