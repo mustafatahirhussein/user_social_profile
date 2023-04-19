@@ -32,25 +32,19 @@ UserSocialProfile(
 
 ### Optional parameters
 
-### Bulleted list
-
-### picture
-### email
-### phone
+* picture
+* email
+* phone
 
 In addition, a custom style can also be applied to the same via:
 
-### Numbered list
-
-### phoneStyle
-### phoneStyle
+* phoneStyle
+* emailStyle
 
 ## Contributing
 
 If you'd like to contribute to this project, please follow these guidelines:
 
-### Bulleted list
-
-### Submit an issue describing the bug or feature request.
-### Fork the repository and make changes in a new branch.
-### Submit a pull request with your changes.
+* Submit an issue describing the bug or feature request.
+* Fork the repository and make changes in a new branch.
+* Submit a pull request with your changes.
