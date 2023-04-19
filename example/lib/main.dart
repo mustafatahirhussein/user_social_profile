@@ -19,10 +19,11 @@ class MyApp extends StatelessWidget {
           title: const Text("Package Test"),
           centerTitle: true,
         ),
-        body:  Center(
+        body: Center(
           child: UserSocialProfile(
             fullName: "Mustafa Tahir",
-            picture: 'https://avatars.githubusercontent.com/u/60258980?s=400&u=49d305bd19e5cf0eaf101986bfa075c3a7a3931c&v=4',
+            picture:
+                'https://avatars.githubusercontent.com/u/60258980?s=400&u=49d305bd19e5cf0eaf101986bfa075c3a7a3931c&v=4',
             icons: [
               icon(Platform.medium),
               icon(Platform.github),
@@ -43,8 +44,8 @@ class MyApp extends StatelessWidget {
   }
 
   SocialIcon icon(String param) => SocialIcon(
-    name: param,
-    link: "https://github.com/mustafatahirhussein",
-    iconSize: 45,
-  );
+        name: param,
+        link: "https://github.com/mustafatahirhussein",
+        iconSize: 45,
+      );
 }

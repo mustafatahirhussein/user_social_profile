@@ -11,14 +11,14 @@ class UserSocialProfile extends StatelessWidget {
 
   const UserSocialProfile(
       {Key? key,
-        required this.fullName,
-        this.picture,
-        this.nameStyle,
-        this.email,
-        this.emailStyle,
-        this.phone,
-        this.phoneStyle,
-        required this.icons})
+      required this.fullName,
+      this.picture,
+      this.nameStyle,
+      this.email,
+      this.emailStyle,
+      this.phone,
+      this.phoneStyle,
+      required this.icons})
       : super(key: key);
 
   final String? picture;
@@ -37,7 +37,7 @@ class UserSocialProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextStyle style =
-    const TextStyle(fontSize: 50, fontWeight: FontWeight.normal);
+        const TextStyle(fontSize: 50, fontWeight: FontWeight.normal);
 
     return ListView(
       shrinkWrap: true,
@@ -45,9 +45,7 @@ class UserSocialProfile extends StatelessWidget {
         Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-
             UserProfileHandlerCustom(imageUrl: picture!),
-
             const SizedBox(
               height: 30,
             ),
@@ -61,23 +59,24 @@ class UserSocialProfile extends StatelessWidget {
         email == null
             ? Container()
             : Text(
-          "Email: ${email!}",
-          textAlign: TextAlign.center,
-          softWrap: true,
-          style: emailStyle ?? style.copyWith(fontSize: 18),
-        ),
+                "Email: ${email!}",
+                textAlign: TextAlign.center,
+                softWrap: true,
+                style: emailStyle ?? style.copyWith(fontSize: 18),
+              ),
         phone == null
             ? Container()
             : Text(
-          "Phone: ${phone!}",
-          textAlign: TextAlign.center,
-          softWrap: true,
-          style: phoneStyle ?? style.copyWith(fontSize: 18),
-        ),
+                "Phone: ${phone!}",
+                textAlign: TextAlign.center,
+                softWrap: true,
+                style: phoneStyle ?? style.copyWith(fontSize: 18),
+              ),
 
         SizedBox(
           height: 20,
         ),
+
         ///Horizontal Class for Social Icon
         Container(
           height: 120,
@@ -90,11 +89,11 @@ class UserSocialProfile extends StatelessWidget {
               children: icons
                   .map(
                     (e) => SocialIcon(
-                  name: e.name,
-                  link: e.link,
-                  iconSize: e.iconSize,
-                ),
-              )
+                      name: e.name,
+                      link: e.link,
+                      iconSize: e.iconSize,
+                    ),
+                  )
                   .toList()),
         ),
       ],
@@ -137,15 +136,15 @@ class SocialIcon extends StatelessWidget {
 
 ///Social Media Icons
 class Platform {
-  static  String linkedin = SocialConst.urlLinkedin;
-  static  String github = SocialConst.urlGithub;
-  static  String behance = SocialConst.urlBehance;
-  static  String instagram = SocialConst.urlInstagram;
-  static  String medium = SocialConst.urlMedium;
-  static  String meta = SocialConst.urlMeta;
-  static  String stack = SocialConst.urlStackoverflow;
-  static  String youtube = SocialConst.urlYoutube;
-  static  String twitter = SocialConst.urlTwitter;
+  static String linkedin = SocialConst.urlLinkedin;
+  static String github = SocialConst.urlGithub;
+  static String behance = SocialConst.urlBehance;
+  static String instagram = SocialConst.urlInstagram;
+  static String medium = SocialConst.urlMedium;
+  static String meta = SocialConst.urlMeta;
+  static String stack = SocialConst.urlStackoverflow;
+  static String youtube = SocialConst.urlYoutube;
+  static String twitter = SocialConst.urlTwitter;
 }
 
 // Unit Test

@@ -27,7 +27,7 @@ class UserProfileHandlerCustom extends StatelessWidget {
   }
 
   Widget get icon => CircleAvatar(
-    radius: 80,
-    child: Icon(Icons.person_sharp, size: 80),
-  );
+        radius: 80,
+        child: Icon(Icons.person_sharp, size: 80),
+      );
 }
