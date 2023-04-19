@@ -1,10 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:user_social_profile/src/social_icon_const.dart';
+import 'package:user_social_profile/src/widgets/cache_image_network_custom.dart';
 
 class UserSocialProfile extends StatelessWidget {
   ///Supported Icons
-  /// Behance, Youtube, Linkedin, Github, Twitter, Insta, Meta, Stackoverflow, Medium
+  /// Behance, Youtube, Linkedin, Github, Twitter, Instagram, Meta, Stackoverflow, Medium
 
   const UserSocialProfile(
       {Key? key,
@@ -42,21 +44,27 @@ class UserSocialProfile extends StatelessWidget {
         Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            CachedNetworkImage(
-              imageUrl: picture == null
-                  ? "https://nowsheradc.peshawarhighcourt.gov.pk/assets/public/profile_n_pictures/1650867081Muhammad_Fiaz.png"
-                  : picture!,
-              imageBuilder: (context, imageProvider) => CircleAvatar(
-                backgroundColor: Colors.black,
-                radius: 101,
-                child: CircleAvatar(
-                  radius: 100,
-                  backgroundImage: imageProvider,
-                ),
-              ),
-              placeholder: (context, url) => const CircularProgressIndicator(),
-              errorWidget: (context, url, error) => const Icon(Icons.error),
+
+            // CachedNetworkImage(
+            //   imageUrl: picture == null
+            //       ? "https://nowsheradc.peshawarhighcourt.gov.pk/assets/public/profile_n_pictures/1650867081Muhammad_Fiaz.png"
+            //       : picture!,
+            //   imageBuilder: (context, imageProvider) => CircleAvatar(
+            //     backgroundColor: Colors.black,
+            //     radius: 101,
+            //     child: CircleAvatar(
+            //       radius: 100,
+            //       backgroundImage: imageProvider,
+            //     ),
+            //   ),
+            //   placeholder: (context, url) => const CircularProgressIndicator(),
+            //   errorWidget: (context, url, error) => const Icon(Icons.error),
+            // ),
+
+            CacheImageNetworkCustom(
+              imageUrl: picture!,
             ),
+
             const SizedBox(
               height: 40,
             ),
@@ -126,9 +134,12 @@ class SocialIcon extends StatelessWidget {
         width: iconSize ?? 50,
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
-          image: DecorationImage(
-            image: AssetImage('assets/$name.png'),
-          ),
+          // image: DecorationImage(
+          //   image: AssetImage('assets/$name.png'),
+          // ),
+        ),
+        child: CacheImageNetworkCustom(
+          imageUrl: link,
         ),
       ),
       onTap: () => gotoUrl(link),
@@ -145,15 +156,15 @@ class SocialIcon extends StatelessWidget {
 
 ///Social Media Icons
 class Platform {
-  static const String linkedin = "linkedin";
-  static const String github = "github";
-  static const String behance = "behance";
-  static const String instagram = "instagram";
-  static const String medium = "medium";
-  static const String meta = "meta";
-  static const String stack = "stackoverflow";
-  static const String youtube = "youtube";
-  static const String twitter = "twitter";
+  static  String linkedin = SocialConst.urlLinkedin;
+  static  String github = SocialConst.urlGithub;
+  static  String behance = SocialConst.urlBehance;
+  static  String instagram = SocialConst.urlInstagram;
+  static  String medium = SocialConst.urlMedium;
+  static  String meta = SocialConst.urlMeta;
+  static  String stack = SocialConst.urlStackoverflow;
+  static  String youtube = SocialConst.urlYoutube;
+  static  String twitter = SocialConst.urlTwitter;
 }
 
 // Unit Test
