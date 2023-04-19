@@ -1,32 +1,16 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+This plugin is quite useful for showing a Developer's social media information, particularly useful for ABOUT THE DEVELOPER section in majority of the apps.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+## Preview
+![alt text](https://user-images.githubusercontent.com/60258980/233025802-2f1c98e3-c8c7-471f-b1e3-6180da63c90a.png)
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
 
-This package is useful for displaying the User or a Developer's Social Media information.
-
-## Features
-This is a pure Dart Package
-
-## How to install and use
-
+## Installation & usage
 First, import the package
-
 ```
 import 'package:user_social_profile/user_social_profile.dart';
 ```
 
-
 Code Snippet
-
 ```
 UserSocialProfile(
     fullName: "Mustafa Tahir",
@@ -46,20 +30,27 @@ UserSocialProfile(
  ),
 ```
 
-Here's a Demo
+### Optional parameters
 
-![Screenshot_20220627-182839](https://user-images.githubusercontent.com/60258980/175958849-43870f49-d26e-4b3f-9ee6-1a66406d1657.jpg)
+### Bulleted list
 
-Optional Parameters
+### picture
+### email
+### phone
 
-```
-- Picture
-- Email
-- Phone
+In addition, a custom style can also be applied to the same via:
 
-You can make use of styling as well by applying,
+### Numbered list
 
-- emailStyle
-- phoneStyle
-```
+### phoneStyle
+### phoneStyle
 
+## Contributing
+
+If you'd like to contribute to this project, please follow these guidelines:
+
+### Bulleted list
+
+### Submit an issue describing the bug or feature request.
+### Fork the repository and make changes in a new branch.
+### Submit a pull request with your changes.

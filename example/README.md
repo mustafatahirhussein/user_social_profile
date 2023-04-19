@@ -1,16 +1,56 @@
-# example
+This plugin is quite useful for showing a Developer's social media information, particularly useful for ABOUT THE DEVELOPER section in majority of the apps.
 
-A new Flutter project.
+## Preview
+![alt text](https://user-images.githubusercontent.com/60258980/233025802-2f1c98e3-c8c7-471f-b1e3-6180da63c90a.png)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Installation & usage
+First, import the package
+```
+import 'package:user_social_profile/user_social_profile.dart';
+```
 
-A few resources to get you started if this is your first Flutter project:
+Code Snippet
+```
+UserSocialProfile(
+    fullName: "Mustafa Tahir",
+    icons: [
+        SocialIcon(
+        name: Platform.github,
+        link: "your_github_url",
+        iconSize: 50,
+      ),
+        SocialIcon(
+        name: Platform.linkedin,
+        link: "your_linkedin_url",
+        iconSize: 50,
+      ),
+    ],
+    email: "abc@gmail.com",
+ ),
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Optional parameters
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Bulleted list
+
+### picture
+### email
+### phone
+
+In addition, a custom style can also be applied to the same via:
+
+### Numbered list
+
+### phoneStyle
+### phoneStyle
+
+## Contributing
+
+If you'd like to contribute to this project, please follow these guidelines:
+
+### Bulleted list
+
+### Submit an issue describing the bug or feature request.
+### Fork the repository and make changes in a new branch.
+### Submit a pull request with your changes.
