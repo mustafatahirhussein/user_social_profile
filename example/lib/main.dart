@@ -20,23 +20,41 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
         body: Center(
-          child: UserSocialProfile(
-            fullName: "Mustafa Tahir",
-            picture:
-                'https://avatars.githubusercontent.com/u/60258980?s=400&u=49d305bd19e5cf0eaf101986bfa075c3a7a3931c&v=4',
-            icons: [
-              icon(Platform.medium),
-              icon(Platform.github),
-              icon(Platform.youtube),
-              icon(Platform.linkedin),
-              icon(Platform.behance),
-              icon(Platform.stack),
-              icon(Platform.meta),
-              icon(Platform.twitter),
-              icon(Platform.instagram),
+          child: Column(
+            children: [
+              UserSocialProfile(
+                fullName: "Mustafa Tahir",
+                picture:
+                    'https://avatars.githubusercontent.com/u/60258980?s=400&u=49d305bd19e5cf0eaf101986bfa075c3a7a3931c&v=4',
+                icons: [
+                  icon(Platform.medium),
+                  icon(Platform.github),
+                  icon(Platform.youtube),
+                  icon(Platform.linkedin),
+                  icon(Platform.behance),
+                  icon(Platform.stack),
+                  icon(Platform.meta),
+                  icon(Platform.twitter),
+                  icon(Platform.instagram),
+                ],
+                email: "abc@gmail.com",
+                phone: "+921234567890",
+              ),
+
+              UserSocialProfile(
+                fullName: "Mustafa Tahir",
+                picture: "your_image_url",
+                phone: "+921234567899",
+                icons: [
+                  SocialIcon(
+                    name: Platform.stack,
+                    link: "your_stackoverflow_url",
+                    iconSize: 50,
+                  ),
+                ],
+                email: "dummyemail@gmail.com",
+              ),
             ],
-            email: "abc@gmail.com",
-            phone: "+921234567890",
           ),
         ),
       ),
