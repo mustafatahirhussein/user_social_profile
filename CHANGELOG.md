@@ -9,3 +9,6 @@
 ### 1.0.2
 - [BUG-FIX] Fixed bug in main file
 - Added more to doc
+
+### 1.0.3
+- [BUG-FIX] minor fixes

@@ -1,6 +1,6 @@
 name: user_social_profile
 description: This package will display a developer's socal profile information.
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/mustafatahirhussein
 repository: https://github.com/mustafatahirhussein/user_social_profile.git
 issue_tracker: https://github.com/mustafatahirhussein/user_social_profile/issues
