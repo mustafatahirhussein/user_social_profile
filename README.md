@@ -4,7 +4,8 @@ This plugin is quite useful for showing a Developer's social media information,
 particularly useful for <strong>ABOUT THE DEVELOPER</strong> section in majority of the apps.
 
 <div align="center">
-Some useful insights
+------ Some useful insights ------
+
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Pub](https://img.shields.io/pub/v/user_social_profile)](https://pub.dev/packages/user_social_profile)
