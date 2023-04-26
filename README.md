@@ -1,7 +1,7 @@
 # user_social_profile
 
 This plugin is quite useful for showing a Developer's social media information,
-particularly useful for ABOUT THE DEVELOPER section in majority of the apps.
+particularly useful for <strong>ABOUT THE DEVELOPER</strong> section in majority of the apps.
 
 ## Preview
 
