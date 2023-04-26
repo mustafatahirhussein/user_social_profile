@@ -3,13 +3,13 @@
 This plugin is quite useful for showing a Developer's social media information,
 particularly useful for <strong>ABOUT THE DEVELOPER</strong> section in majority of the apps.
 
-<p align="center">
-### Some useful insights
+<div align="center">
+Some useful insights
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Twitter](https://img.shields.io/twitter/follow/MustafaTahir567?style=social)](https://twitter.com/MustafaTahir567)
 [![Pub](https://img.shields.io/pub/v/user_social_profile)](https://pub.dev/packages/user_social_profile)
-</p>
+[![Twitter](https://img.shields.io/twitter/follow/MustafaTahir567?style=social)](https://twitter.com/MustafaTahir567)
+</div>
 
 ## Preview
 
@@ -17,7 +17,7 @@ particularly useful for <strong>ABOUT THE DEVELOPER</strong> section in majority
 
 ## Installation & usage
 
-### Under the project's terminal, jot down the below command to install the suitable version, or install it manually.
+Under the project's terminal, jot down the below command to install the suitable version, or install it manually.
 ```shell
 flutter pub add user_social_profile
 
