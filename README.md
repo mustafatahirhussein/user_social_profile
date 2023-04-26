@@ -77,3 +77,6 @@ If you'd like to contribute to this project, please follow these guidelines:
 * Submit an issue describing the bug or feature request.
 * Fork the repository and make changes in a new branch.
 * Submit a pull request with your changes.
+
+## If you like my work - Buy me a coffee
+<a href="https://www.buymeacoffee.com/mustafatahir44" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
