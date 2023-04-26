@@ -1,3 +1,6 @@
+[![pub package][package_svg]](https://pub.dev/packages/user_social_profile)
+[![GitHub][license_svg]](LICENSE)
+
 # user_social_profile
 
 This plugin is quite useful for showing a Developer's social media information,
