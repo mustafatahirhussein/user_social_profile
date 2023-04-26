@@ -1,5 +1,4 @@
-[![pub package][package_svg]](https://pub.dev/packages/user_social_profile)
-[![GitHub][license_svg]](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # user_social_profile
 
