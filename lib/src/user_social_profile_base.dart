@@ -1,157 +1,187 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:user_social_profile/src/social_icon_const.dart';
-import 'package:user_social_profile/src/widgets/user_profile_handler_custom.dart';
-import 'package:user_social_profile/src/widgets/platform_icon_custom_widget.dart';
+import 'package:user_social_profile/src/utils/constants.dart';
+import 'package:user_social_profile/src/widgets/app_network_image.dart';
+import 'package:flutter/services.dart';
+import 'package:user_social_profile/src/widgets/social_network_image.dart';
+part 'package:user_social_profile/src/widgets/social_icons_widget.dart';
 
 class UserSocialProfile extends StatelessWidget {
-  ///Supported Icons
-  /// Behance, Youtube, Linkedin, Github, Twitter, Instagram, Meta, Stackoverflow, Medium
+  const UserSocialProfile({
+    super.key,
+    required this.name,
+    this.avatar,
+    this.nameStyle,
+    this.email,
+    this.emailStyle,
+    this.phone,
+    this.phoneStyle,
+    required this.socialPlatforms,
+    this.cardColor,
+  });
 
-  const UserSocialProfile(
-      {Key? key,
-      required this.fullName,
-      this.picture,
-      this.nameStyle,
-      this.email,
-      this.emailStyle,
-      this.phone,
-      this.phoneStyle,
-      required this.icons})
-      : super(key: key);
-
-  final String? picture;
-
-  final String fullName;
+  final String? avatar;
+  final String name;
   final TextStyle? nameStyle;
-
   final String? email;
   final TextStyle? emailStyle;
-
   final String? phone;
   final TextStyle? phoneStyle;
-
-  final List<SocialIcon> icons;
+  final List<SocialIconsWidget> socialPlatforms;
+  final Color? cardColor;
 
   @override
   Widget build(BuildContext context) {
-    TextStyle style =
-        const TextStyle(fontSize: 50, fontWeight: FontWeight.normal);
+    final theme = Theme.of(context);
 
-    return ListView(
-      shrinkWrap: true,
-      children: [
-        Column(
-          mainAxisSize: MainAxisSize.min,
+    return Container(
+      margin: const EdgeInsets.all(5),
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        color: cardColor ?? theme.cardColor,
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 20,
+            offset: const Offset(0, 10),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: theme.primaryColor.withValues(alpha: 0.1),
+                    width: 4,
+                  ),
+                ),
+                child: AppNetworkImage(imageUrl: avatar),
+              ),
+              const SizedBox(width: 20),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      name,
+                      style:
+                          nameStyle ??
+                          const TextStyle(
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: -0.5,
+                          ),
+                    ),
+                    if (email != null)
+                      _buildContactItem(
+                        context,
+                        Icons.email_outlined,
+                        email!,
+                        emailStyle,
+                      ),
+                    if (phone != null)
+                      _buildContactItem(
+                        context,
+                        Icons.phone_android_outlined,
+                        phone!,
+                        phoneStyle,
+                      ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 20),
+            child: Divider(height: 1),
+          ),
+
+          Text(
+            "Connect with me",
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
+              color: theme.hintColor,
+              letterSpacing: 1.2,
+            ),
+          ),
+          const SizedBox(height: 16),
+          Wrap(
+            alignment: WrapAlignment.center,
+            spacing: 12,
+            runSpacing: 12,
+            children: socialPlatforms,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildContactItem(
+    BuildContext context,
+    IconData icon,
+    String value,
+    TextStyle? customStyle,
+  ) {
+    return GestureDetector(
+      onTap: () {
+        Clipboard.setData(ClipboardData(text: value));
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("$value copied to clipboard"),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      },
+      child: Padding(
+        padding: const EdgeInsets.only(top: 4),
+        child: Row(
           children: [
-            UserProfileHandlerCustom(imageUrl: picture!),
-            const SizedBox(
-              height: 30,
+            Icon(icon, size: 14, color: Theme.of(context).primaryColor),
+            const SizedBox(width: 6),
+            Flexible(
+              child: Text(
+                value,
+                style:
+                    customStyle ??
+                    TextStyle(fontSize: 12, color: Theme.of(context).hintColor),
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ],
         ),
-
-        Text(fullName,
-            softWrap: true,
-            textAlign: TextAlign.center,
-            style: nameStyle ?? style.copyWith(fontWeight: FontWeight.bold)),
-        email == null
-            ? Container()
-            : Text(
-                "Email: ${email!}",
-                textAlign: TextAlign.center,
-                softWrap: true,
-                style: emailStyle ?? style.copyWith(fontSize: 18),
-              ),
-        phone == null
-            ? Container()
-            : Text(
-                "Phone: ${phone!}",
-                textAlign: TextAlign.center,
-                softWrap: true,
-                style: phoneStyle ?? style.copyWith(fontSize: 18),
-              ),
-
-        SizedBox(
-          height: 20,
-        ),
-
-        ///Horizontal Class for Social Icon
-        Container(
-          height: 120,
-          width: MediaQuery.of(context).size.width,
-          alignment: Alignment.center,
-          child: Wrap(
-              alignment: WrapAlignment.center,
-              runSpacing: 6,
-              spacing: 8,
-              children: icons
-                  .map(
-                    (e) => SocialIcon(
-                      name: e.name,
-                      link: e.link,
-                      iconSize: e.iconSize,
-                    ),
-                  )
-                  .toList()),
-        ),
-      ],
-    );
-  }
-}
-
-///Icon Class
-class SocialIcon extends StatelessWidget {
-  const SocialIcon(
-      {Key? key, required this.name, required this.link, this.iconSize})
-      : super(key: key);
-
-  final String name;
-  final String link;
-  final double? iconSize;
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      child: Container(
-        height: iconSize ?? 50,
-        width: iconSize ?? 50,
-        decoration: BoxDecoration(
-          shape: BoxShape.rectangle,
-        ),
-        child: PlatformIconCustomWidget(path: name),
       ),
-      onTap: () => gotoUrl(link),
     );
-  }
-
-  ///Access Link
-  dynamic gotoUrl(String url) async {
-    if (await launchUrl(Uri.parse(url))) {
-      throw "Error";
-    }
   }
 }
 
 ///Social Media Icons
 class Platform {
-  static String linkedin = SocialConst.urlLinkedin;
-  static String github = SocialConst.urlGithub;
-  static String behance = SocialConst.urlBehance;
-  static String instagram = SocialConst.urlInstagram;
-  static String medium = SocialConst.urlMedium;
-  static String meta = SocialConst.urlMeta;
-  static String stack = SocialConst.urlStackoverflow;
-  static String youtube = SocialConst.urlYoutube;
-  static String twitter = SocialConst.urlTwitter;
+  static String linkedin = Constants.urlLinkedin;
+  static String github = Constants.urlGithub;
+  static String behance = Constants.urlBehance;
+  static String instagram = Constants.urlInstagram;
+  static String medium = Constants.urlMedium;
+  static String meta = Constants.urlMeta;
+  static String stack = Constants.urlStackoverflow;
+  static String youtube = Constants.urlYoutube;
+  static String twitter = Constants.urlTwitter;
 }
 
 // Unit Test
 class Validate {
-  static delayValueChange() {
+  static int delayValueChange() {
     int val = 0;
     debugPrint(val.toString());
     val = 1;
     debugPrint(val.toString());
+    return val;
   }
 }

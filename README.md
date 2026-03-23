@@ -14,7 +14,7 @@ particularly useful for <strong>ABOUT THE DEVELOPER</strong> section in majority
 
 ## Preview
 
-![alt text](https://user-images.githubusercontent.com/60258980/233025802-2f1c98e3-c8c7-471f-b1e3-6180da63c90a.png)
+![alt text](https://i.postimg.cc/ryjy4k4m/WTd-TDl.jpg)
 
 ## Installation & usage
 
@@ -56,24 +56,6 @@ UserSocialProfile(
 * picture
 * email
 * phone
-
-```shell
-# Here is the updated snippet view
-
-              UserSocialProfile(
-                fullName: "Mustafa Tahir",
-                picture: "your_image_url",
-                phone: "+921234567899",
-                icons: [
-                  SocialIcon(
-                    name: Platform.stack,
-                    link: "your_stackoverflow_url",
-                    iconSize: 50,
-                  ),
-                ],
-                email: "dummyemail@gmail.com",
-              ),
-```
 
 #### Additionally, custom styles can also be applied
 

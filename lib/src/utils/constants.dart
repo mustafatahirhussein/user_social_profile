@@ -1,5 +1,5 @@
-class SocialConst {
-  SocialConst._();
+class Constants {
+  Constants._();
 
   static String urlMeta =
       'https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-1024.png';
