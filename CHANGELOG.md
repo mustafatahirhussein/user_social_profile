@@ -1,3 +1,8 @@
+## 1.0.5 - March 24, 2026
+
+* Replaced cache_network_image with Flutter's built-in Image.network for better platform support.
+* Minor tweaks
+
 ## 1.0.4 - March 23, 2026
 
 * Updated the package dependencies

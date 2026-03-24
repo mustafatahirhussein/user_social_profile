@@ -7,7 +7,7 @@ class Constants {
       'https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-1024.png';
   static String urlYoutube =
       'https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-1024.png';
-  static String urlTwitter =
+  static String urlX =
       'https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-1024.png';
   static String urlMedium =
       'https://cdn4.iconfinder.com/data/icons/social-media-rounded-corners/512/Medium_rounded_cr-1024.png';

@@ -20,13 +20,28 @@ class UserSocialProfile extends StatelessWidget {
     this.cardColor,
   });
 
+  /// User avatar
   final String? avatar;
+
+  /// User fullName
   final String name;
+
+  /// Custom name [textStyle] for user
   final TextStyle? nameStyle;
+
+  /// user email
   final String? email;
+
+  /// Custom email [textStyle] for user
   final TextStyle? emailStyle;
+
+  /// User phone
   final String? phone;
+
+  /// Custom phone [textStyle] for user
   final TextStyle? phoneStyle;
+
+  /// Social platforms for user [Behance, StackOverflow, Medium, Github, Meta, Instagram, X, YouTube, LinkedIn]
   final List<SocialIconsWidget> socialPlatforms;
   final Color? cardColor;
 
@@ -172,7 +187,7 @@ class Platform {
   static String meta = Constants.urlMeta;
   static String stack = Constants.urlStackoverflow;
   static String youtube = Constants.urlYoutube;
-  static String twitter = Constants.urlTwitter;
+  static String x = Constants.urlX;
 }
 
 // Unit Test

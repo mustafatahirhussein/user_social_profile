@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,12 +8,17 @@ class SocialNetworkImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CachedNetworkImage(
-      imageUrl: path,
+    return Image.network(
+      path,
       fit: BoxFit.cover,
       alignment: Alignment.center,
-      placeholder: (ctx, _) => Center(child: CupertinoActivityIndicator()),
-      errorWidget: (ctx, _, child) => Icon(Icons.error, size: 25),
+      loadingBuilder: (context, child, loadingProgress) {
+        if (loadingProgress == null) return child;
+        return const Center(child: CupertinoActivityIndicator());
+      },
+      errorBuilder: (context, error, stackTrace) {
+        return const Icon(Icons.error_outline, size: 25);
+      },
     );
   }
 }

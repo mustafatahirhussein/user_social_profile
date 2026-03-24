@@ -1,6 +1,6 @@
 name: user_social_profile
 description: This package will display a developer's social profile information.
-version: 1.0.4
+version: 1.0.5
 homepage: https://github.com/mustafatahirhussein/user_social_profile
 repository: https://github.com/mustafatahirhussein/user_social_profile
 issue_tracker: https://github.com/mustafatahirhussein/user_social_profile/issues
@@ -18,7 +18,6 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   url_launcher: ^6.1.4
-  cached_network_image: ^3.2.1
 
 dev_dependencies:
   flutter_test:

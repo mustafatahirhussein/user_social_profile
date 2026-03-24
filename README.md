@@ -8,7 +8,7 @@ particularly useful for <strong>ABOUT THE DEVELOPER</strong> section in majority
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Pub](https://img.shields.io/pub/v/user_social_profile)](https://pub.dev/packages/user_social_profile)
-[![Twitter](https://img.shields.io/twitter/follow/MustafaTahir567?style=social)](https://twitter.com/MustafaTahir567)
+[![X](https://img.shields.io/twitter/follow/MustafaTahir567?style=social)](https://twitter.com/MustafaTahir567)
 
 </div>
 
